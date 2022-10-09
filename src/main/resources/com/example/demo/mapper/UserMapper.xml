@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.UserMapper">
+  <resultMap id="contentResultMap" type="com.example.demo.pojo.User">
+    <id column="id" property="id"/>
+    <result column="userid" property="userid"/>
+    <result column="name" property="name"/>
+    <result column="alias" property="alias"/>
+    <result column="mobile" property="mobile"/>
+    <result column="department" property="department"/>
+    <result column="orders" property="orders"/>
+    <result column="position" property="position"/>
+    <result column="gender" property="gender"/>
+    <result column="email" property="email"/>
+    <result column="biz_mail" property="bizMail"/>
+    <result column="is_leader_in_dept" property="isLeaderInDept"/>
+    <result column="direct_leader" property="directLeader"/>
+    <result column="enable" property="enable"/>
+    <result column="avatar_mediaid" property="avatarMediaid"/>
+    <result column="main_department" property="mainDepartment"/>
+  </resultMap>
+
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.example.demo.pojo.User" useGeneratedKeys="true">
+    insert into user (userid, name, alias,mobile, department, orders,position,
+                      gender, email,biz_mail, is_leader_in_dept, direct_leader,
+                      enable, avatar_mediaid, telephone, address, main_department)
+                values (#{userid}, #{name}, #{alias},#{mobile}, #{department},
+                        #{orders}, #{position}, #{gender}, #{email},#{bizMail},
+                        #{isLeaderInDept}, #{directLeader},#{enable}, #{avatarMediaid},
+                        #{telephone},#{address}, #{mainDepartment})
+  </insert>
+
+</mapper>

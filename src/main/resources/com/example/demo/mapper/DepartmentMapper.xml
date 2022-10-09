@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+   namespace=""  跟接口名 包名+类名 一致
+      复制之后需要关注 这个名字是不 接口的包名+类名
+   mapper标签里面子标签
+     根据的不同操作 选择不同的 标签
+       <select>  <insert> <update> <delete>
+     id值 跟 接口方法名一致
+     参数类型 跟接口方法参数类型一致
+     返回值 跟接口的方法的返回值一致
+
+-->
+<mapper namespace="com.example.demo.mapper.DepartmentMapper">
+
+    <insert id="Departmentinsert" keyColumn="id" keyProperty="id" parameterType="com.example.demo.pojo.Department" >
+        insert into department (id,name,nameen,parentid,`order`)
+        values (#{id}, #{name}, #{nameen}, #{parentid}, #{order})
+    </insert>
+</mapper>

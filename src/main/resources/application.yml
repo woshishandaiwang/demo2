@@ -1,0 +1,24 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: demo
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    timeout: 30000
+  # datasource
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test01?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&useSSL=false
+    username: root
+    password: root
+logging:
+  level:
+    root: info
+# mybatis
+mybatis:
+  mapper-locations: classpath:/resources/mapper/*.xml
+  type-aliases-package: com/example/demo.pojo
